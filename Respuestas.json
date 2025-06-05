@@ -1,0 +1,321 @@
+[
+  {
+    "stakeholder": "Administrador General",
+    "persona": "Administrador General Principal",
+    "answers": {
+      "1": "Reportes de ocupación diaria de sillones, ingresos mensuales por servicios, costos operativos y flujo de pacientes por especialidad.",
+      "2": "Actualmente se revisan tiempos de espera y cantidad de pacientes atendidos manualmente a través de hojas de cálculo, lo que dificulta la medición en tiempo real.",
+      "3": "Sí; indicadores como tiempo promedio de atención, porcentaje de citas canceladas, tasa de cumplimiento de tratamientos y rentabilidad por servicio.",
+      "4": "Control jerárquico: acceso total para administración, acceso restringido para recepción (solo agendamiento y consulta básica), acceso para odontólogos limitado a historia clínica y registro de tratamientos, y permisos específicos para finanzas.",
+      "5": "Integración en tiempo real con el módulo de facturación electrónica de SUNAT y enlace con el sistema contable interno para consolidar estados financieros y declaraciones mensuales."
+    }
+  },
+  {
+    "stakeholder": "Administrador General",
+    "persona": "Subadministrador",
+    "answers": {
+      "1": "Reportes semanales de ocupación de agenda por odontólogo, análisis de rentabilidad por tratamiento (limpiezas, endodoncias, ortodoncia) y balances de costos fijos versus ingresos.",
+      "2": "Se utilizan listados impresos y revisión manual de libros de registro; no existe dashboard centralizado.",
+      "3": "Sí; KPIs de satisfacción del paciente (encuestas), porcentaje de citas reprogramadas y efectividad de campañas promocionales.",
+      "4": "Roles definidos: administrador con permisos totales, contador con acceso a módulos financieros, jefes de área con vista de indicadores específicos, y personal operativo con permisos mínimos.",
+      "5": "Conexión directa con SUNAT para emisión de boletas electrónicas y descarga de RUC actualizado de pacientes, así como integración con el sistema contable para conciliación bancaria."
+    }
+  },
+  {
+    "stakeholder": "Administrador General",
+    "persona": "Coordinador de Proyectos",
+    "answers": {
+      "1": "Reportes trimestrales de desempeño operacional, KPIs consolidados y proyecciones de crecimiento basadas en la demanda de servicios odontológicos.",
+      "2": "Se obtienen métricas de eficiencia a través de encuestas de satisfacción y revisión de tiempos, pero sin una fuente unificada de datos.",
+      "3": "Sí; definir KPIs de uso del sistema, tasa de conversión de citas agendadas a citas atendidas y nivel de cumplimiento presupuestal.",
+      "4": "Definir perfiles granulares: acceso líder de proyecto, acceso gestor de contenidos, acceso supervisor de atención y acceso auditor con lectura de históricos.",
+      "5": "Esperamos integración de facturación con SUNAT en tiempo real y sincronización diaria con el ERP financiero interno."
+    }
+  },
+  {
+    "stakeholder": "Recepcionista",
+    "persona": "Recepcionista Principal",
+    "answers": {
+      "1": "Nombre completo del paciente, servicio solicitado, odontólogo asignado, estado de seguro y saldo pendiente de pago.",
+      "2": "Reviso la agenda impresa o en hoja de Excel y confirmo disponibilidad llamando al odontólogo en caso de duda.",
+      "3": "Errores al teclear fechas o nombre de paciente sucede aproximadamente 2 veces por semana; se corrigen manualmente borrando y volviendo a escribir.",
+      "4": "Alertas de citas próximas con color destacado (rojo para hoy, amarillo para mañana) y recordatorios para pacientes con saldo pendiente.",
+      "5": "Un calendario visual semanal donde se vean franjas horarias y odontólogos, preferible a listas extensas."
+    }
+  },
+  {
+    "stakeholder": "Recepcionista",
+    "persona": "Recepcionista Auxiliar",
+    "answers": {
+      "1": "Lista rápida de pacientes agendados para el día: nombre, hora y odontólogo; si hay urgencias pendientes.",
+      "2": "Llamo directamente a cada consultorio para confirmar si hay huecos; uso WhatsApp para consultas rápidas con odontólogos.",
+      "3": "Errores de duplicar citas suceden 3-4 veces al mes; los corrijo eliminando el registro duplicado y reenviando confirmación al paciente.",
+      "4": "Notificaciones emergentes cuando un paciente cancela o reprograma, y alarmas para llamadas de confirmación un día antes.",
+      "5": "Prefiero un calendario visual con bloques de color para cada odontólogo y horarios disponibles."
+    }
+  },
+  {
+    "stakeholder": "Recepcionista",
+    "persona": "Recepcionista de Turno Vespertino",
+    "answers": {
+      "1": "Necesito ver el nombre, hora y odontólogo asignado y si el paciente ha completado su ficha de historial antes de llegar.",
+      "2": "Actualizo la disponibilidad en una pizarra digital compartida y consulto al asistente dental para verificar cambios de último minuto.",
+      "3": "Los errores al ingresar datos bancarios del paciente suceden 1 vez por semana; se corrigen comunicándome con el área de finanzas.",
+      "4": "Recordatorios automáticos vía pantalla cuando llegue la hora de confirmar citas del día siguiente y alertas de pagos retrasados.",
+      "5": "Me sería más cómodo un calendario por odontólogo con filtros por especialidad y estado de cita."
+    }
+  },
+  {
+    "stakeholder": "Odontólogo",
+    "persona": "Odontólogo Senior",
+    "answers": {
+      "1": "Historial completo de tratamientos previos, radiografías digitales, alergias y medicamentos actuales.",
+      "2": "Sí; registro de observaciones clínicas, procedimientos realizados y plan de tratamiento al finalizar cada cita.",
+      "3": "Diariamente; consulto el historial clínico antes de atender para revisar progreso de tratamientos largos (endodoncias, ortodoncias).",
+      "4": "Me gustaría gestionar mis bloques de atención ingresando mis horas de disponibilidad mensualmente y actualizarlas en tiempo real desde el sistema.",
+      "5": "Funcionalidades de plantillas de notas clínicas predefinidas, acceso rápido a imágenes radiográficas en pantalla y formularios para plan de tratamientos."
+    }
+  },
+  {
+    "stakeholder": "Odontólogo",
+    "persona": "Odontólogo Junior",
+    "answers": {
+      "1": "Diagnósticos previos, resultados de exámenes de laboratorio y notas de exámenes bucales anteriores.",
+      "2": "Sí; necesito un formulario donde pueda anotar procedimientos realizados (aplicación de selladores, limpiezas) durante cada cita.",
+      "3": "Varias veces al día, especialmente cuando los pacientes regresan para seguimiento de ortodoncia o prótesis.",
+      "4": "Preferiría gestionar mi disponibilidad por turnos semanales, con opción de bloquear días en caso de imprevistos.",
+      "5": "Un acceso rápido a protocolos de procedimientos (por ejemplo, pasos de una endodoncia) y recordatorios de revisión en fechas futuras."
+    }
+  },
+  {
+    "stakeholder": "Odontólogo",
+    "persona": "Odontólogo Especialista en Ortodoncia",
+    "answers": {
+      "1": "Necesito consultar resultados de modelos 3D, fotografías de avance y archivos de laboratorio de cada paciente antes de la cita.",
+      "2": "Sí; deseo un módulo que permita llevar un registro de cada fase del tratamiento ortodóntico y notas de cambios mensuales.",
+      "3": "Uso el historial clínico cada vez que hay reajustes de aparatos; aproximadamente tres veces al mes para cada paciente de ortodoncia.",
+      "4": "Mi disponibilidad varía trimestralmente; me interesa un calendario que programe citas grupales y seguimiento automático de bandas elásticas.",
+      "5": "Función para calcular automáticamente el avance de dientes en base a fotografías y alertas para ajustes en aparatos en fechas específicas."
+    }
+  },
+  {
+    "stakeholder": "Asistente Dental",
+    "persona": "Asistente Dental A",
+    "answers": {
+      "1": "Antes: esterilizo equipos, preparo anestesia y organizo instrumentos. Durante: asisto al odontólogo pasándole instrumentos y succiono fluidos. Después: limpio el consultorio y registro materiales utilizados.",
+      "2": "Sí; sería útil ver un listado con las próximas citas por cada odontólogo para tener preparados los materiales específicos.",
+      "3": "Prefiero acceder a instrucciones clínicas en formato PDF o guías rápidas dentro del sistema, con procedimientos estandarizados.",
+      "4": "Sí; necesito registrar qué material (cemento, resina, agujas) se utiliza en cada cita para llevar control de inventario.",
+      "5": "Alertas automáticas cuando falta algún insumo, y un chat interno para coordinar cambios de horario o necesidades urgentes."
+    }
+  },
+  {
+    "stakeholder": "Asistente Dental",
+    "persona": "Asistente Dental B",
+    "answers": {
+      "1": "Antes: reviso el expediente del paciente, preparo bandejas esterilizadas. Durante: colaboro con succión, paso instrumentos, asisto en radiografías. Después: desecho materiales desechables y limpio superficies.",
+      "2": "Sí; me gustaría un calendario por odontólogo para saber a qué hora debo tener listos kits específicos (ortodoncia, cirugía).",
+      "3": "Prefiero listas de pasos clínicos directamente vinculadas a cada diagnóstico, accesibles desde la ficha electrónica.",
+      "4": "Sí; registrar cantidades y lotes de materiales (anestesia, selladores) para generar alertas de reposición automática.",
+      "5": "Un tablero compartido que muestre en tiempo real los cambios de agenda y disponibilidad de cada área (laboratorio, radiología)."
+    }
+  },
+  {
+    "stakeholder": "Asistente Dental",
+    "persona": "Asistente Dental C",
+    "answers": {
+      "1": "Antes: verifico protocolos de higiene, preparo quirófano en caso de cirugía; Durante: ayudo en tomas de impresiones y aplicación de anestesia; Después: limpio y hago seguimiento postoperatorio de pacientes.",
+      "2": "Sí; ver la agenda diaria por especialista me ayudaría a preparar kits específicos para cada tipo de tratamiento.",
+      "3": "Accedo a videos cortos de procedimientos quirúrgicos directamente desde el sistema cuando asisto en cirugías orales.",
+      "4": "Registro lotes y fechas de vencimiento de materiales (anestesia, suturas) para garantizar trazabilidad y calidad.",
+      "5": "Integración con mensajería interna para coordinar rápidamente con odontólogo, farmacia y laboratorio en caso de emergencias."
+    }
+  },
+  {
+    "stakeholder": "Área de Finanzas",
+    "persona": "Gerente Financiero",
+    "answers": {
+      "1": "Estados de resultados mensuales, flujo de caja diario, cuentas por cobrar filtradas por antigüedad y reportes de facturación por servicio.",
+      "2": "Actualmente emitimos boletas electrónicas desde una plataforma externa; ingresamos manualmente al sistema contable una vez al mes.",
+      "3": "Necesitamos integración directa vía el API de SUNAT para emisión de boletas y facturas, así como descarga automática de RUC y validación de comprobantes.",
+      "4": "Debe contemplar pagos por adelantado de tratamientos largos (ortodoncia), seguros dentales y pagos parciales; registro automático de abonos.",
+      "5": "Automatización en cierres de caja diarios con conciliación de efectivo, tarjetas y reportes automáticos para el administrador."
+    }
+  },
+  {
+    "stakeholder": "Área de Finanzas",
+    "persona": "Contador",
+    "answers": {
+      "1": "Reporte de cuentas por pagar y por cobrar, márgenes de ganancia por tipo de tratamiento y conciliación bancaria diaria.",
+      "2": "Generamos boletas electrónicas mediante la plataforma de SUNAT y luego las importamos manualmente a nuestro ERP contable.",
+      "3": "Requerimos un módulo que envíe la información al API de SUNAT, reciba el CDR y actualice automáticamente el estado del documento.",
+      "4": "Debe incluir registro de anticipos, pagos de seguros y facturación parcial por tratamientos largos; alertas de vencimiento de pagos.",
+      "5": "Busco que el sistema genere cierres diarios automáticos y facilite reportes de auditoría interna sin intervención manual."
+    }
+  },
+  {
+    "stakeholder": "Paciente",
+    "persona": "Paciente Regular",
+    "answers": {
+      "1": "Me gusta agendar por llamada telefónica para preguntar disponibilidad inmediata, aunque usar una app también sería conveniente.",
+      "2": "Necesito ver disponibilidad del odontólogo y precios aproximados del tratamiento antes de elegir fecha y hora.",
+      "3": "Prefiero recibir recordatorios tres días antes y un recordatorio adicional el mismo día de la cita.",
+      "4": "WhatsApp es mi canal favorito porque es más rápido y me permite responder o confirmar al instante.",
+      "5": "Sí; me gustaría revisar en línea las citas pasadas, tratamientos realizados y próximos estudios programados."
+    }
+  },
+  {
+    "stakeholder": "Paciente",
+    "persona": "Paciente Nuevo",
+    "answers": {
+      "1": "Prefiero agendar vía web para comparar horarios y servicios sin tener que llamar.",
+      "2": "Datos esenciales: nombre del profesional, horario disponible, costo estimado y si aceptan mi seguro.",
+      "3": "Un recordatorio 24 horas antes es suficiente para mí, junto con un mensaje de confirmación una hora antes.",
+      "4": "Correo electrónico para documentación formal y WhatsApp para cambios de última hora.",
+      "5": "Sí; me facilitaría ver mi historial para saber qué tratamientos se han hecho y cuándo debo volver."
+    }
+  },
+  {
+    "stakeholder": "Paciente",
+    "persona": "Paciente con Seguro Privado",
+    "answers": {
+      "1": "Me gustaría agendar por app y que me muestre si el servicio está cubierto por mi seguro antes de confirmar.",
+      "2": "Quiero ver disponibilidad del especialista y si hay convenios con mi seguro, además de costos esperados.",
+      "3": "Prefiero dos recordatorios: uno tres días antes y otro la mañana del día de la cita.",
+      "4": "Notificación por correo para confirmación y WhatsApp para cambios de última hora.",
+      "5": "Sí; me interesa ver mi historial de autorizaciones con el seguro y tratamientos anteriores."
+    }
+  },
+  {
+    "stakeholder": "Soporte Técnico",
+    "persona": "Ingeniero de Soporte A",
+    "answers": {
+      "1": "Recomiendo arquitectura cliente-servidor basada en web (LAMP o LEMP), con base de datos MySQL, servidor Apache/Nginx y front-end en React para escalabilidad.",
+      "2": "Implementar cifrado AES en reposo para datos clínicos, TLS 1.3 para conexiones, autenticación multifactor para usuarios y roles estrictos con ACL.",
+      "3": "Usar balanceadores de carga, réplicas de bases de datos y desplegar en VPS redundantes para garantizar failover automático.",
+      "4": "Integración RESTful con RENIEC para validación de DNI, con SUNAT para facturación electrónica, y API de WhatsApp Business para notificaciones de cita.",
+      "5": "Ofrecemos soporte 24/7 con SLA de respuesta de 4 horas, actualizaciones trimestrales y monitoreo proactivo para detectar anomalías."
+    }
+  },
+  {
+    "stakeholder": "Soporte Técnico",
+    "persona": "Ingeniero de Soporte B",
+    "answers": {
+      "1": "Propongo contenedores Docker orquestados con Kubernetes para microservicios: autenticación, agenda, facturación y reportes.",
+      "2": "Cifrado de extremo a extremo (TLS 1.2+), escaneo de vulnerabilidades automatizado y auditorías semestrales de seguridad.",
+      "3": "Implementar clústeres de base de datos replicados y balanceo de carga geográfico para tolerancia a fallos.",
+      "4": "Utilizar webhooks para sincronizar datos con RENIEC y SUNAT, y API de Twilio o WhatsApp para mensajería de citas.",
+      "5": "Mantenimiento proactivo con monitoreo en Grafana y Prometheus, y un plan de recuperación ante desastres documentado."
+    }
+  },
+  {
+    "stakeholder": "RENIEC",
+    "persona": "Representante RENIEC A",
+    "answers": {
+      "1": "Exponemos servicio SOAP/REST para validación de DNI; el sistema debe enviar número de DNI y recibir nombres, apellidos y estado de vigencia.",
+      "2": "Recomendamos autenticación basada en token JWT con caducidad corta y firma HMAC para cada solicitud a la API.",
+      "3": "Debe cumplir Ley de Protección de Datos Personales (Ley N° 29733), confidencialidad absoluta y no almacenar información más allá de la sesión.",
+      "4": "Cada consulta queda registrada en un log con fecha, hora, usuario y resultado; el sistema debe mantener bitácora inmutable por al menos 5 años.",
+      "5": "Uso obligatorio de TLS 1.2 o superior, IPs autorizadas y validación de certificados emitidos por entes de certificación peruanos."
+    }
+  },
+  {
+    "stakeholder": "RENIEC",
+    "persona": "Representante RENIEC B",
+    "answers": {
+      "1": "Ofrecemos una API RESTful con endpoints para consultar datos demográficos y estado civil del ciudadano.",
+      "2": "Sugiero usar OAuth 2.0 junto con JWT firmado por servidor RENIEC para cada petición al servicio.",
+      "3": "La normativa impide el almacenamiento prolongado de datos personales; solo se puede guardar un hash de verificación temporal.",
+      "4": "Es necesario mantener un log cifrado de todas las consultas, que incluya usuario, IP y propósito de la consulta.",
+      "5": "Se exige conexión a través de VPN dedicada y uso de certificados X.509 para todas las llamadas a la API."
+    }
+  },
+  {
+    "stakeholder": "SUNAT",
+    "persona": "Representante SUNAT A",
+    "answers": {
+      "1": "El sistema debe consumir el Web Service de SUNAT para emisión de comprobantes electrónicos (boletas, facturas) en formato XML y enviar CDR inmediatamente.",
+      "2": "Boletas de venta electrónica son obligatorias para servicios de salud; facturas electrónicas si el paciente lo solicita o hay empresas pagadoras.",
+      "3": "No hay regulaciones específicas para clínicas dentales, pero se aplica la normativa general de emisión electrónica y generación de libros electrónicos mensuales en PLE.",
+      "4": "Los errores de validación (XML mal formado, datos inconsistentes) se devuelven con códigos específicos; el sistema debe reintentar envío automático hasta 3 veces.",
+      "5": "Recomendamos usar consulta en tiempo real vía API REST, manteniendo conexión persistente y monitorear los estados de lote para sincronización inmediata."
+    }
+  },
+  {
+    "stakeholder": "SUNAT",
+    "persona": "Representante SUNAT B",
+    "answers": {
+      "1": "Debes implementar el Web Service Facturación Electrónica en modo beta y luego pasar a producción una vez aprobado.",
+      "2": "La boleta electrónica es obligatoria; facturas por honorarios se generan solo si el paciente lo pide y paga con RUC.",
+      "3": "No existen reportes médicos específicos, pero sí debes generar Libro Electrónico de Ventas diariamente.",
+      "4": "Proporcionamos códigos de error detallados (101: RUC inválido, 201: monto inconsistente); sugerimos validación local antes del envío.",
+      "5": "Ofrecemos servicio de sincronización programada cada hora y Webhooks para estados de lote en tiempo real."
+    }
+  },
+  {
+    "stakeholder": "SUNAT",
+    "persona": "Representante SUNAT C",
+    "answers": {
+      "1": "El sistema debe habilitar el ambiente de pruebas (certificación) para validar estructuras XML antes de pasar a producción.",
+      "2": "En clínica dental, la boleta electrónica debe generarse inmediatamente después de cada atención; si no, se considera omisión.",
+      "3": "Se exige la generación de archivos TXT mensuales para libros electrónicos y su envío antes del 15 de cada mes.",
+      "4": "Cuando hay error en la respuesta CDR, el sistema debe notificar al usuario y ofrecer reintento manual o automático.",
+      "5": "Conexión estable con el servicio REST de SUNAT y monitoreo continuo de estado de servicios para evitar retrasos."
+    }
+  },
+  {
+    "stakeholder": "DIRESA Puno",
+    "persona": "Inspector DIRESA Puno A",
+    "answers": {
+      "1": "Debe cumplir normas del Reglamento Sanitario de Establecimientos de Salud (D.S. N° 011-2011-SA) y directivas regionales de control de infecciones.",
+      "2": "Requieren validación de protocolos clínicos (antisepsia, esterilización) y registro de profesionales habilitados antes de la puesta en marcha.",
+      "3": "El sistema debe generar alertas automáticas de caducidad de insumos, protocolos de bioseguridad y comprobantes de esterilización.",
+      "4": "Reportes PDF mensuales de actividades por odontólogo, uso de insumos, incidencias sanitarias y resultados de control de residuos biológicos.",
+      "5": "Sí; debe permitir exportar información de manera que un auditor ingrese y verifique listas de pacientes atendidos, protocolos seguidos y estados de equipamiento."
+    }
+  },
+  {
+    "stakeholder": "DIRESA Puno",
+    "persona": "Inspector DIRESA Puno B",
+    "answers": {
+      "1": "El sistema debe reportar semanalmente estadísticas de esterilización y vacunación del personal de la clínica.",
+      "2": "Es necesario validar que cada profesional tenga su credential vigente y que los protocolos de esterilización estén registrados.",
+      "3": "Se pueden incluir checklists digitales y firmas electrónicas de responsables para asegurar cumplimiento.",
+      "4": "Debe generarse reporte digital diario con metadatos (fecha, código de paciente, tipo de procedimiento) para auditorías.",
+      "5": "Idealmente un módulo de auditoría automática que genere alertas cuando falten registros de protocolos o inspecciones."
+    }
+  },
+  {
+    "stakeholder": "Farmacia y Laboratorio Asociado",
+    "persona": "Farmacéutico",
+    "answers": {
+      "1": "Insumos frecuentes: anestesia local, antibióticos sistémicos, analgésicos, materiales de obturación y selladores.",
+      "2": "Sí; idealmente generar recetas electrónicas que incluyan dosis, duración y sustitutos permitidos, vinculadas al número de historia clínica.",
+      "3": "Control de stock en Excel semanal; necesitaría integración para actualizar inventario en tiempo real al expedir materiales desde la clínica.",
+      "4": "Orden debe contener nombre del paciente, diagnóstico, medicamentos, dosis, firma digital del odontólogo y fecha de emisión.",
+      "5": "Sí; notificaciones automáticas cuando el stock de insumos baje de un umbral (por ejemplo, anestesia <10 unidades)."
+    }
+  },
+  {
+    "stakeholder": "Farmacia y Laboratorio Asociado",
+    "persona": "Técnico de Laboratorio",
+    "answers": {
+      "1": "Productos: materiales de impresión (alginato, silicona), resinas para prótesis, cemento para corona y pasta para endodoncia.",
+      "2": "Sería útil generar órdenes electrónicas desde el consultorio al laboratorio para fresado CAD/CAM y elaboración de prótesis.",
+      "3": "Llevo control manual en cuaderno; requiero integración para recibir órdenes electrónicas y actualizar inventario automático.",
+      "4": "La orden debe indicar tipo de aproximado, medidas tomadas, modelo a elaborar y fecha de recogida, junto con datos de paciente y odontólogo.",
+      "5": "Sí; alertas para pedidos urgentes y faltantes críticos (resina o cerámica), con estado de entrega actualizado en tiempo real."
+    }
+  },
+  {
+    "stakeholder": "Soporte Técnico",
+    "persona": "Ingeniero de Soporte C",
+    "answers": {
+      "1": "Recomiendo una arquitectura basada en microservicios en contenedores Docker conectados por un API Gateway para escalabilidad.",
+      "2": "Implementar cifrado de datos sensibles con AES-256 en reposo, uso de HSTS, WAF y revisión semestral de vulnerabilidades.",
+      "3": "Desplegar en múltiples zonas (zonas de disponibilidad), con réplicas de base de datos y failover automático para alta disponibilidad.",
+      "4": "Integrar con APIs de RENIEC para validación de identidad, SUNAT para facturación, y Twilio/WhatsApp para notificaciones de cita.",
+      "5": "Plan de mantenimiento que incluye actualizaciones semanales de seguridad, monitoreo 24/7 con alertas y soporte remoto."
+    }
+  }
+]
