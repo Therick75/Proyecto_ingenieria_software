@@ -1,0 +1,98 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor #EEF
+  BorderColor Black
+  ArrowColor Black
+}
+
+actor Paciente
+actor Recepcionista
+actor Odontólogo
+actor "Asistente Dental" as Asistente
+actor "Área de Finanzas" as Finanzas
+actor "Administrador General" as Admin
+actor "DIRESA / MINSA" as Regulador
+actor "Soporte Técnico" as Soporte
+
+rectangle "Sistema de Gestión Clínica" {
+
+  package "Módulo de Registro y Autenticación" {
+    usecase "Registrar paciente" as UC1
+    usecase "Iniciar sesión" as UC2
+    usecase "Validar identidad con RENIEC" as UC3
+    UC1 .> UC3 : <<include>>
+  }
+
+  package "Módulo de Citas" {
+    usecase "Solicitar cita médica" as UC4
+    usecase "Ver disponibilidad médica" as UC5
+    usecase "Registrar cita" as UC6
+    usecase "Verificar solapamientos" as UC7
+    usecase "Recibir notificación de cita" as UC8
+    usecase "Registrar cita manual" as UC9
+    
+    UC4 .> UC5 : <<include>>
+    UC4 .> UC7 : <<include>>
+    UC4 .> UC6 : <<include>>
+    UC6 .> UC8 : <<include>>
+    UC9 .> UC8 : <<include>>
+  }
+
+  package "Módulo de Atención" {
+    usecase "Marcar llegada a la clínica" as UC10
+    usecase "Consultar historial clínico" as UC11
+    usecase "Consultar agenda del día" as UC12
+    usecase "Registrar tratamiento" as UC13
+  }
+
+  package "Módulo de Servicios" {
+    usecase "Enviar orden de farmacia/laboratorio" as UC14
+  }
+
+  package "Facturación y SUNAT" {
+    usecase "Emitir comprobante electrónico" as UC15
+    usecase "Validar comprobante con SUNAT" as UC16
+    UC15 .> UC16 : <<include>>
+  }
+
+  package "Administración y Reportes" {
+    usecase "Solicitar estadísticas" as UC17
+    usecase "Generar reporte ejecutivo" as UC18
+    usecase "Solicitar auditoría clínica" as UC19
+    usecase "Generar reportes auditables" as UC20
+    UC17 .> UC18 : <<include>>
+    UC19 .> UC20 : <<include>>
+  }
+
+  package "Soporte" {
+    usecase "Registrar incidencia" as UC21
+    usecase "Aplicar correcciones" as UC22
+    UC21 .> UC22 : <<extend>>
+  }
+}
+
+' Relaciones con actores
+
+Paciente --> UC1
+Paciente --> UC2
+Paciente --> UC4
+Paciente --> UC8
+
+Recepcionista --> UC9
+Recepcionista --> UC10
+
+Odontólogo --> UC11
+Odontólogo --> UC13
+
+Asistente --> UC12
+
+Finanzas --> UC15
+
+Admin --> UC17
+
+Regulador --> UC19
+
+Soporte --> UC21
+@enduml

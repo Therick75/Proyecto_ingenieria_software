@@ -1,0 +1,91 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Actores (como comentarios o referencias externas)
+' Paciente, Recepcionista, Odontólogo, Asistente Dental, Administrador General, Regulador, Soporte Técnico, Área de Finanzas
+
+class SistemaWebDeCitas {
+  +iniciarRegistro()
+  +iniciarSesion()
+  +solicitarCita()
+  +registrarCita()
+  +marcarLlegada()
+  +mostrarHistorial()
+  +enviarOrdenFarmacia()
+  +enviarDatosFacturacion()
+  +registrarIncidencia()
+}
+
+class ModuloAutenticacion {
+  +verificarIdentidad()
+  +validarCredenciales()
+}
+
+class ModuloRENIEC {
+  +consultarDNI()
+}
+
+class AgendaMedica {
+  +consultarDisponibilidad()
+  +obtenerAgendaPorOdontologo()
+  +actualizarEstadoCita()
+  +obtenerCitasDelDia()
+}
+
+class BaseDeDatosClinica {
+  +guardarRegistro()
+  +consultarAgenda()
+  +guardarCita()
+  +obtenerHistorial()
+  +guardarTratamiento()
+  +extraerDatos()
+}
+
+class ModuloNotificaciones {
+  +enviarNotificacion()
+}
+
+class HistorialClinico {
+  +consultarFicha()
+  +actualizarHistorial()
+}
+
+class FarmaciaLaboratorio {
+  +recibirOrden()
+}
+
+class ModuloReportes {
+  +generarInforme()
+  +prepararAuditoria()
+}
+
+class SUNAT_API {
+  +generarBoleta()
+  +validarComprobante()
+}
+
+class AreaFinanzas {
+  +procesarFacturacion()
+  +entregarComprobante()
+}
+
+class SoporteTecnico {
+  +corregirIncidencia()
+}
+
+' Relaciones
+SistemaWebDeCitas --> ModuloAutenticacion : usa
+ModuloAutenticacion --> ModuloRENIEC : consulta
+SistemaWebDeCitas --> AgendaMedica : consulta
+SistemaWebDeCitas --> BaseDeDatosClinica : consulta/actualiza
+SistemaWebDeCitas --> ModuloNotificaciones : notifica
+SistemaWebDeCitas --> HistorialClinico : accede
+HistorialClinico --> BaseDeDatosClinica : consulta/actualiza
+AgendaMedica --> BaseDeDatosClinica : consulta
+SistemaWebDeCitas --> FarmaciaLaboratorio : envía orden
+SistemaWebDeCitas --> AreaFinanzas : envía datos
+AreaFinanzas --> SUNAT_API : solicita boleta
+SistemaWebDeCitas --> ModuloReportes : solicita informes
+ModuloReportes --> BaseDeDatosClinica : extrae datos
+SistemaWebDeCitas --> SoporteTecnico : reporta problema
+@enduml

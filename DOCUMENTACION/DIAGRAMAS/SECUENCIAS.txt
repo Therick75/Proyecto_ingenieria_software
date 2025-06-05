@@ -1,0 +1,108 @@
+@startuml
+actor Paciente
+participant "Módulo de Autenticación" as Auth
+participant "Módulo RENIEC" as Reniec
+
+actor Recepcionista
+participant "Sistema Web de Citas" as Sistema
+participant "Agenda Médica" as Agenda
+participant "Base de Datos Clínica" as BD
+participant "Módulo de Notificaciones" as Notificador
+
+actor Odontólogo
+participant "Historial Clínico" as Historial
+actor "Asistente Dental" as Asistente
+
+participant "Farmacia / Laboratorio" as Farmacia
+actor "Área de Finanzas" as Finanzas
+participant "SUNAT API" as SUNAT
+
+participant "Módulo de Reportes" as Reportes
+actor "Administrador General" as Admin
+participant "DIRESA / MINSA" as Regulador
+
+actor "Soporte Técnico" as Soporte
+
+== Registro de paciente ==
+Paciente -> Sistema : Inicia registro
+Sistema -> Auth : Verifica identidad
+Auth -> Reniec : Consulta DNI
+Reniec --> Auth : Datos verificados
+Auth --> Sistema : Registro exitoso
+
+== Inicio de sesión ==
+Paciente -> Sistema : Inicia sesión
+Sistema -> Auth : Validación de credenciales
+Auth --> Sistema : Sesión iniciada
+
+== Agendamiento de cita ==
+Paciente -> Sistema : Solicita nueva cita
+Sistema -> Agenda : Mostrar disponibilidad médica
+Agenda -> BD : Obtener agenda por odontólogo
+BD --> Agenda : Horarios disponibles
+Paciente -> Sistema : Selecciona fecha y hora
+Sistema -> BD : Verifica solapamientos
+BD --> Sistema : Confirmación
+Sistema -> BD : Registra cita
+BD --> Sistema : Confirmación
+Sistema -> Notificador : Enviar notificación
+Notificador -> Paciente : WhatsApp / Email / SMS
+
+== Alternativa: Cita registrada por Recepcionista ==
+Recepcionista -> Sistema : Ingresa cita manualmente
+Sistema -> BD : Registro directo
+BD --> Sistema : Confirmación
+Sistema -> Notificador : Notificación al paciente
+
+== Atención médica ==
+Paciente -> Recepcionista : Llega a la clínica
+Recepcionista -> Sistema : Marca llegada
+Sistema -> Agenda : Actualiza estado
+
+Odontólogo -> Sistema : Accede a historial clínico
+Sistema -> Historial : Consultar ficha del paciente
+Historial -> BD : Obtener historial médico
+BD --> Historial : Datos clínicos
+Historial --> Sistema : Enviar información
+Sistema --> Odontólogo : Mostrar historial
+
+Asistente -> Sistema : Consulta agenda de preparación
+Sistema -> Agenda : Enviar citas próximas por odontólogo
+Agenda -> BD : Citas del día
+BD --> Agenda : Resultados
+Agenda --> Asistente : Agenda del día
+
+== Registro de tratamiento ==
+Odontólogo -> Sistema : Registra tratamiento realizado
+Sistema -> Historial : Actualiza historial clínico
+Historial -> BD : Guardar tratamiento
+BD --> Historial : Confirmación
+
+== Farmacia / Laboratorio ==
+Sistema -> Farmacia : Enviar orden de receta o laboratorio
+Farmacia --> Sistema : Confirmación
+
+== Facturación y SUNAT ==
+Sistema -> Finanzas : Enviar datos de servicio prestado
+Finanzas -> SUNAT : Generar boleta electrónica
+SUNAT --> Finanzas : Comprobante validado
+Finanzas -> Paciente : Entrega de comprobante
+
+== Reportes y control administrativo ==
+Admin -> Sistema : Solicita estadísticas
+Sistema -> Reportes : Generar informe
+Reportes -> BD : Datos de citas, ausencias, carga médica
+BD --> Reportes : Resultados
+Reportes --> Admin : Reporte ejecutivo
+
+== Auditoría sanitaria ==
+Regulador -> Sistema : Solicita historial y registros
+Sistema -> Reportes : Preparar auditoría
+Reportes -> BD : Extraer reportes clínicos
+BD --> Reportes : Datos auditables
+Reportes --> Regulador : Entrega de auditoría
+
+== Soporte técnico ==
+Sistema -> Soporte : Registrar incidencia
+Soporte --> Sistema : Corrección / mantenimiento aplicado
+@enduml

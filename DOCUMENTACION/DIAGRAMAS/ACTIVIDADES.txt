@@ -1,0 +1,136 @@
+@startuml
+|Paciente|
+start
+:Inicia registro;
+|Sistema|
+:Verifica identidad;
+|Auth|
+:Consulta DNI;
+
+|Reniec|
+if (DNI válido?) then (Sí)
+  :Devuelve datos verificados;
+else (No)
+  stop
+endif
+
+|Sistema|
+:Registro exitoso;
+:Inicia sesión;
+|Auth|
+:Valida credenciales;
+if (Credenciales válidas?) then (Sí)
+  :Sesión iniciada;
+else
+  stop
+endif
+
+if (¿Cita por paciente?) then (Sí)
+  |Paciente|
+  :Solicita cita;
+  |Sistema|
+  :Consulta disponibilidad médica;
+  |Agenda|
+  :Consulta agenda por odontólogo;
+  |BD|
+  :Devuelve horarios;
+  if (¿Horarios disponibles?) then (Sí)
+    |Paciente|
+    :Selecciona fecha y hora;
+    |Sistema|
+    :Verifica solapamientos;
+    if (Sin conflictos?) then (Sí)
+      :Registra cita;
+      |Notificador|
+      :Notifica por WhatsApp / Email / SMS;
+    else (Solapamiento)
+      stop
+    endif
+  else (No hay horarios)
+    stop
+  endif
+else (No, por recepcionista)
+  |Recepcionista|
+  :Ingresa cita;
+  |Sistema|
+  :Verifica disponibilidad;
+  |BD|
+  :Confirma agenda;
+  :Registra cita;
+  |Notificador|
+  :Notificación al paciente;
+endif
+
+|Paciente|
+:Acude a la clínica;
+|Recepcionista|
+:Marca llegada;
+|Agenda|
+:Actualiza estado;
+
+|Odontólogo|
+:Consulta historial;
+|Historial|
+:Consulta ficha;
+|BD|
+:Retorna historial;
+|Sistema|
+:Muestra historial;
+
+|Asistente|
+:Consulta agenda de preparación;
+|Agenda|
+:Obtiene citas del día;
+|BD|
+:Entrega citas;
+|Agenda|
+:Agenda del día;
+
+|Odontólogo|
+:Registra tratamiento;
+|Historial|
+:Guarda tratamiento;
+|BD|
+:Confirmación;
+
+|Sistema|
+:Envía orden a farmacia / laboratorio;
+|Farmacia|
+:Confirma orden;
+
+|Finanzas|
+:Genera boleta SUNAT;
+|SUNAT|
+if (Boleta válida?) then (Sí)
+  :Valida boleta;
+  |Finanzas|
+  :Entrega comprobante;
+else (Error)
+  stop
+endif
+
+|Admin|
+:Solicita estadísticas;
+|Reportes|
+:Genera informe;
+|BD|
+:Recupera datos;
+|Reportes|
+:Entrega reporte;
+
+|Regulador|
+:Solicita auditoría;
+|Reportes|
+:Prepara auditoría;
+|BD|
+:Extrae reportes clínicos;
+|Reportes|
+:Entrega auditoría;
+
+|Sistema|
+:Reporta incidencia;
+|Soporte|
+:Corrige problema;
+
+stop
+@enduml
